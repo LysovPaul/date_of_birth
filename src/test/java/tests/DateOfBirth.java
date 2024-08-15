@@ -10,6 +10,7 @@ public class DateOfBirth {
 
     AgeValidator ageValidator = new AgeValidator();
 
+    //Тест сравнивает ожидаемый результат с фактическим
     @Test(dataProvider = "AgeDataProvider")
     public void testUserAgeValidation(LocalDate dateOfBirth, boolean expectedResult) {
         boolean actualResult = ageValidator.isUserEighteenYearsOld(dateOfBirth);
@@ -17,6 +18,7 @@ public class DateOfBirth {
                 "Ошибка!");
     }
 
+    //Задаём граничные значения в виде параметров
     @DataProvider(name = "AgeDataProvider")
     public Object[][] provideAgeData() {
         return new Object[][]{
