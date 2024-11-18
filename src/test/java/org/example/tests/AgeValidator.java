@@ -1,4 +1,4 @@
-package tests;
+package org.example.tests;
 
 import java.time.LocalDate;
 import java.time.Period;
