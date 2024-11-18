@@ -1,6 +1,6 @@
-package tests;
+package org.example.tests;
 
-import org.testng.Assert;
+import static org.assertj.core.api.Assertions.assertThat;
 import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
@@ -14,8 +14,9 @@ public class DateOfBirth {
     @Test(dataProvider = "AgeDataProvider")
     public void testUserAgeValidation(LocalDate dateOfBirth, boolean expectedResult) {
         boolean actualResult = ageValidator.isUserEighteenYearsOld(dateOfBirth);
-        Assert.assertEquals(actualResult, expectedResult,
-                "Ошибка!");
+        assertThat(actualResult)
+                .as("Ошибка!", dateOfBirth)
+                .isEqualTo(expectedResult);
     }
 
     //Задаём граничные значения в виде параметров
