@@ -8,14 +8,14 @@ import java.time.LocalDate;
 
 public class DateOfBirth {
 
-    AgeValidator ageValidator = new AgeValidator();
+    private AgeValidator ageValidator = new AgeValidator();
 
     //Тест сравнивает ожидаемый результат с фактическим
     @Test(dataProvider = "AgeDataProvider")
     public void testUserAgeValidation(LocalDate dateOfBirth, boolean expectedResult) {
         boolean actualResult = ageValidator.isUserEighteenYearsOld(dateOfBirth);
         assertThat(actualResult)
-                .as("Ошибка!", dateOfBirth)
+                .as("Validator validated the age correctly", dateOfBirth)
                 .isEqualTo(expectedResult);
     }
 
