@@ -15,7 +15,7 @@ public class DateOfBirth {
     public void testUserAgeValidation(LocalDate dateOfBirth, boolean expectedResult) {
         boolean actualResult = ageValidator.isUserEighteenYearsOld(dateOfBirth);
         assertThat(actualResult)
-                .as("Validator validated the age correctly", dateOfBirth)
+                .as("Validator validated the age correctly")
                 .isEqualTo(expectedResult);
     }
 
